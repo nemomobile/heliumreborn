@@ -15,7 +15,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
         core = new Core(viewer->getView());
     }
 
-    viewer->getView()->setWindowTitle("HeliumReborn");
+    viewer->getView()->setWindowTitle("Browser");
     viewer->setMainQmlFile("qrc:/qmls/qml/HeliumReborn/main.qml");
 
     core->start();
