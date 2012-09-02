@@ -56,9 +56,10 @@ Item {
       width: parent.width
       height: parent.height
 
-      x: webView.contentX < 0 ? -webView.contentX : webView.contentX > webView.contentWidth-webView.width
+      //in case zoom is active don't move the header along panning
+      x: webView.zoomActive?0 : webView.contentX < 0 ? -webView.contentX : webView.contentX > webView.contentWidth-webView.width
       ? -webView.contentX+webView.contentWidth-webView.width : 0
-      y: webView.contentY < 0 ? -webView.contentY : progressOff*
+      y: webView.contentY < 0 ? webView.zoomActive ? 0: -webView.contentY : progressOff*
             (webView.contentY>height?-height:-webView.contentY)
 
       // Busy Loading Icon
