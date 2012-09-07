@@ -86,8 +86,8 @@ Flickable {
 
          if(contentX<0 || contentY<0){
             var sc = webView.contentsScale
-            if(webView.contentsScale*webView.contentsSize.width<flickable.width){
-               sc=flickable.width/(webView.contentsSize.width/webView.contentsScale)
+            if(webView.contentsScale*webView.width<flickable.width){
+               sc=flickable.width/(webView.width/webView.contentsScale)
             }
             var vx=Math.max(0,contentX)+(flickable.width/2)
             var vy=Math.max(0,contentY)+(flickable.height/2)
@@ -107,7 +107,7 @@ Flickable {
 
          // Set the URL for this WebView
          function setUrl(urlString) { this.url = appcore.fixUrl(urlString); }
-         //function setUrl(urlString) { this.url = urlString; }
+
          // Execute the Zooming
          function doZoom(zoom,centerX,centerY)
          {
@@ -136,7 +136,6 @@ Flickable {
 
          }
 
-         //url:"http://www.connecting.nokia.com/"
          url: {
             appcore.fixUrl(appcore.currentUrl);
 
@@ -173,14 +172,17 @@ Flickable {
             }
          }
          onDoubleClick: {
-            if (!heuristicZoom(clickX, clickY, 2.5)) {
-
-               var zf = flickable.width / contentsSize.width;
-               if (zf >= contentsScale) {
-                  zf = 2.0 // zoom in (else zooming out)
-               }
+            var zf=2.0
+            // if zoomed go back to screen width
+            if(webView.contentsScale*webView.width>flickable.width){
+               zf=flickable.width/(webView.width/webView.contentsScale)
+               doZoom(zf,clickX*zf,clickY*zf)
+            // try to do heuristic zoom with maximum 2.5x
+            }else if (!heuristicZoom(clickX, clickY, 2.5)) {
+               // if no heuristic zoom found, zoom to 2.0x
                doZoom(zf,clickX*zf,clickY*zf)
             }
+
          }
          onIconChanged: { flickable.iconChanged(); }
          onLoadFinished: { if ( appcore ) { appcore.historyCurrentUrl(); } }
