@@ -4,55 +4,24 @@ import com.nokia.extras 1.0
 
 PageStackWindow {
     id: appWindow
+    property bool errorDialogOpen
 
     initialPage: MainPage {
         id: mainPage
     }
 
-    Dialog {
-        id: warningDialog
+    Connections {
+        target: appcore
+        onSslError: {
+            if (appWindow.errorDialogOpen)
+                return
 
-        title: Rectangle {
-            id: titleField
-            height: 2
-            width: parent.width
-            color: "red"
+            appWindow.errorDialogOpen = true
+            var dialog = pageStack.openDialog(Qt.resolvedUrl("SslWarningDialog.qml"))
+            dialog.text="<b>SSL error</b><p>Site cannot be securely authenticated. <p>Error Message:<br>"+errorMsg;
+            dialog.accepted.connect(function() { appWindow.errorDialogOpen = false })
+            dialog.rejected.connect(function() { appWindow.errorDialogOpen = false })
         }
-
-        content:Item {
-            id: name
-            width: parent.width
-            height: 280
-            Text {
-                id: text
-                width: parent.width
-                height: parent.height
-                font.pixelSize: 22
-                anchors.centerIn: parent
-                color: "white"
-                text: "<b>SSL error</b>\n\nSite cannot be securely authenticated. \n\nReason:\n\n "
-                wrapMode:Text.WordWrap
-
-            }
-        }
-
-        buttons: ButtonRow {
-            style: ButtonStyle { }
-            anchors.horizontalCenter: parent.horizontalCenter
-            Button {
-                text: "Ok";
-                onClicked: warningDialog.accept()
-            }
-        }
-
-        Connections {
-            target: appcore
-            onSslError: {
-                text.text="<b>SSL error</b><p>Site cannot be securely authenticated. <p>Error Message:<br>"+errorMsg;
-                warningDialog.open();
-            }
-        }
-
     }
 
     InfoBanner {
