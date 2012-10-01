@@ -5,7 +5,9 @@ import com.nokia.extras 1.0
 PageStackWindow {
     id: appWindow
 
-    initialPage: mainPage
+    initialPage: MainPage {
+        id: mainPage
+    }
 
     Dialog {
         id: warningDialog
@@ -64,10 +66,6 @@ PageStackWindow {
         acceptButtonText: "Done"
         content: LogbookView {
         }
-    }
-
-    MainPage {
-        id: mainPage
     }
 
     ToolBarLayout {
