@@ -39,7 +39,6 @@ CONFIG += qdeclarative-boostable
 # The .cpp file which was generated for your project. Feel free to hack it.
 SOURCES += main.cpp \
     src/Core.cpp \
-    src/MainView.cpp \
     src/Logbook.cpp \
     src/FaviconImageProvider.cpp \
     src/CoreDbHelper.cpp \
@@ -62,7 +61,6 @@ RESOURCES += \
 
 HEADERS += \
     src/Core.h \
-    src/MainView.h \
     src/LogbookLinkItems.h \
     src/Logbook.h \
     src/LinkItem.h \

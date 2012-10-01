@@ -36,9 +36,9 @@
 #include <QSettings>
 #include <QNetworkReply>
 #include <QSslError>
+#include <QDeclarativeView>
 
 #include "buildconfig.h"
-#include "MainView.h"
 #include "WebViewInterface.h"
 #include "models/BookmarksListModel.h"
 #include "models/HistoryListModel.h"
