@@ -25,7 +25,7 @@
 *
 */
 
-import Qt 4.7
+import QtQuick 1.1
 
 import "LogbookViewComponents"
 import "common"

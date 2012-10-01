@@ -20,6 +20,6 @@
 *
 */
 
-import Qt 4.7
+import QtQuick 1.1
 
 Rectangle { color: "#555"; z: -1; }

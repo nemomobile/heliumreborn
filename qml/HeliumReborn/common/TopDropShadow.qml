@@ -20,7 +20,7 @@
 *
 */
 
-import Qt 4.7
+import QtQuick 1.1
 
 Image {
    source: "qrc:/qmls/pics/softshadow-top.png"
