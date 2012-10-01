@@ -92,7 +92,6 @@ OTHER_FILES += \
     qml/HeliumReborn/common/TopDropShadow.qml \
     qml/HeliumReborn/common/ToolTip.qml \
     qml/HeliumReborn/common/TemporaryMessageWithIcon.qml \
-    qml/HeliumReborn/common/ScrollBar.qml \
     qml/HeliumReborn/common/HScrollDropShadow.qml \
     qml/HeliumReborn/common/EmbossedButton.qml \
     qml/HeliumReborn/common/BottomDropShadow.qml \

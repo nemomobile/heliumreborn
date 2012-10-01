@@ -21,6 +21,7 @@
 */
 
 import QtQuick 1.1
+import com.nokia.meego 1.1
 
 import "../common"
 
@@ -31,16 +32,8 @@ ListView {
 
    Background { anchors.fill: parent; z: -1; }
 
-   ScrollBar {
-      verticalOrientation: true
-      whenToShow: parent.moving
-      positionInContent: parent.visibleArea.yPosition
-      visibleContent: parent.visibleArea.heightRatio
-      width: 8
-      anchors.top: parent.top
-      anchors.right: parent.right
-      anchors.bottom: parent.bottom
-      z: 2
+   ScrollDecorator {
+      flickableItem: parent
    }
 
    VScrollDropShadow {
