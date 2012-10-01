@@ -88,10 +88,8 @@ OTHER_FILES += \
     qml/HeliumReborn/FlickableWebView.qml \
     qml/HeliumReborn/FieldText.qml \
     qml/HeliumReborn/common/VScrollDropShadow.qml \
-    qml/HeliumReborn/common/VHScrollDropShadow.qml \
     qml/HeliumReborn/common/TopDropShadow.qml \
     qml/HeliumReborn/common/ToolTip.qml \
-    qml/HeliumReborn/common/HScrollDropShadow.qml \
     qml/HeliumReborn/common/EmbossedButton.qml \
     qml/HeliumReborn/common/BottomDropShadow.qml \
     qml/HeliumReborn/common/BarIcon.qml \

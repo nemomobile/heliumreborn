@@ -51,10 +51,8 @@
         <file>qml/HeliumReborn/common/BarIcon.qml</file>
         <file>qml/HeliumReborn/common/BottomDropShadow.qml</file>
         <file>qml/HeliumReborn/common/EmbossedButton.qml</file>
-        <file>qml/HeliumReborn/common/HScrollDropShadow.qml</file>
         <file>qml/HeliumReborn/common/ToolTip.qml</file>
         <file>qml/HeliumReborn/common/TopDropShadow.qml</file>
-        <file>qml/HeliumReborn/common/VHScrollDropShadow.qml</file>
         <file>qml/HeliumReborn/common/VScrollDropShadow.qml</file>
         <file>qml/HeliumReborn/LogbookViewComponents/BookmarksListView.qml</file>
         <file>qml/HeliumReborn/LogbookViewComponents/Header.qml</file>
