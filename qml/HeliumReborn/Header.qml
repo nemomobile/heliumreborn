@@ -118,40 +118,21 @@ Item {
       }
 
 
-      Item {
-         width: parent.width
+      FieldText {
+         id: fieldText
+
+         onEditFinished: { header.urlChanged(fieldText.text); }
+         onReloadRequested: { webView.reload.trigger(); }
+         onStopRequested: { webView.stop.trigger(); }
+
          anchors.top: headerText.bottom
          anchors.topMargin: 4
          anchors.bottom: parent.bottom
-
-         Item {
-            id: urlBox
-            height: fieldText.height+16
-            anchors.left: parent.left
-            anchors.leftMargin: 10
-            anchors.right: parent.right
-            anchors.rightMargin: 10
-            clip: true
-            property bool mouseGrabbed: false
-
-            z: 3
-
-            FieldText {
-               id: fieldText
-               mouseGrabbed: parent.mouseGrabbed
-
-               onEditFinished: { header.urlChanged(fieldText.text); }
-               onReloadRequested: { webView.reload.trigger(); }
-               onStopRequested: { webView.stop.trigger(); }
-
-               anchors.left: urlBox.left
-               anchors.right: urlBox.right
-               anchors.leftMargin: 6
-               anchors.rightMargin: 6
-               anchors.verticalCenter: urlBox.verticalCenter
-               anchors.verticalCenterOffset: 1
-            }
-         }
+         anchors.bottomMargin: UiConstants.DefaultMargin
+         anchors.left: parent.left
+         anchors.right: parent.right
+         anchors.leftMargin: UiConstants.DefaultMargin
+         anchors.rightMargin: UiConstants.DefaultMargin
 
          BorderImage {
             source: "qrc:/qmls/pics/progressbar.png"
@@ -160,11 +141,8 @@ Item {
             border.left: 13
             border.right: 0
             anchors.left: parent.left
-            anchors.top: urlBox.top
-            anchors.leftMargin: 22
-            anchors.topMargin: 0
-            anchors.bottom: urlBox.bottom
-            anchors.bottomMargin: 0
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
 
             width: (fieldText.width-24) * webView.progress
 
@@ -174,7 +152,6 @@ Item {
             opacity: 0.8-headerSkeleton.progressOff
             clip: true
             z:4
-
          }
       }
 
