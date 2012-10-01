@@ -46,6 +46,7 @@
         <file>qml/HeliumReborn/SslWarningDialog.qml</file>
         <file>qml/HeliumReborn/LogbookSheet.qml</file>
         <file>qml/HeliumReborn/MainPage.qml</file>
+        <file>qml/HeliumReborn/MainPageMenu.qml</file>
         <file>qml/HeliumReborn/common/Background.qml</file>
         <file>qml/HeliumReborn/common/BarIcon.qml</file>
         <file>qml/HeliumReborn/common/BottomDropShadow.qml</file>
