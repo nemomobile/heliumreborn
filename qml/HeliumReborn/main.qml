@@ -30,13 +30,6 @@ PageStackWindow {
         iconSource:"qrc:/qmls/pics/bookmark-icon-30x30.png"
     }
 
-    Sheet {
-        id: logbookSheet
-        acceptButtonText: "Done"
-        content: LogbookView {
-        }
-    }
-
     ToolBarLayout {
         id: commonTools
         visible: true
@@ -69,7 +62,7 @@ PageStackWindow {
 
         ToolIcon {
             iconSource: "qrc:/qmls/pics/bookmarks-30x30.png"
-            onClicked: { logbookSheet.open(); }
+            onClicked: { pageStack.openSheet(Qt.resolvedUrl("LogbookSheet.qml")) }
 
         }
 
