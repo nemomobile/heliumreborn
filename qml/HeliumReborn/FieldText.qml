@@ -35,12 +35,9 @@ TextField {
     platformStyle: TextFieldStyle { paddingRight: defaultFavIcon.width + 32 ; paddingLeft:reloadIcon.width + 32; }
     placeholderText: "Enter URL"
 
-    property bool editing: false
     property bool loading: false
 
     signal editFinished
-    signal editAborted
-    signal editStarted
     signal reloadRequested
     signal stopRequested
 
@@ -54,29 +51,11 @@ TextField {
         defaultFavIcon.opacity = 0.7;
     }
 
-    // Set to "editingUrl" state, and emit the "editStarted" signal
-    function edit() {
-        textEdit.editing = true
-        textEdit.editStarted();
-    }
-
-    // Emit the "editFinished" signal
-    function finishEdit() {
-        textEdit.editing = false
-        textEdit.editFinished();
-    }
-
-    // Set to "<empty>" state, and emit the "editAborted" signal
-    function abortEdit() {
-        textEdit.editing = false
-        textEdit.editAborted();
-    }
-
     Image {
         id: favIcon
         height: parent.height-16
         width: height
-        smooth: true; asynchronous: true;
+        asynchronous: true;
         fillMode: Image.PreserveAspectFit
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
@@ -89,7 +68,6 @@ TextField {
         id: defaultFavIcon
         height: parent.height-16
         width: height
-        smooth: true
         fillMode: Image.PreserveAspectFit
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
@@ -102,7 +80,6 @@ TextField {
         id: reloadIcon
         height: parent.height-16
         width: height
-        smooth: true
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
         anchors.rightMargin: 16
@@ -120,7 +97,6 @@ TextField {
         id: clearIcon
         height: parent.height-16
         width: height
-        smooth: true
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
         anchors.rightMargin: 16
@@ -137,7 +113,6 @@ TextField {
         id: stopIcon
         height: parent.height-16
         width: height
-        smooth: true
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right
         anchors.rightMargin: 16
@@ -151,19 +126,31 @@ TextField {
         }
     }
 
-    Keys.onEscapePressed: { abortEdit(); }
-    Keys.onEnterPressed: { finishEdit(); }
-    Keys.onReturnPressed: { finishEdit(); }
+    Keys.onEnterPressed: {
+        textEdit.editFinished();
+    }
+    Keys.onReturnPressed: {
+        textEdit.editFinished();
+    }
 
     onFocusChanged: {
         if (focus)
-            edit()
+            selectTimer.start()
+    }
+
+    // we must delay the selection on a timer, otherwise something else overwrites it
+    Timer {
+        id: selectTimer
+        interval: 1
+        onTriggered: {
+            parent.selectAll()
+        }
     }
 
     states: [
         State {
             name: "editingUrl"
-            when: textEdit.editing
+            when: textEdit.focus
             PropertyChanges {
                 target: clearIcon
                 opacity: 0.7
@@ -179,11 +166,6 @@ TextField {
             PropertyChanges {
                 target: textEdit
                 readOnly: false
-                focus: true
-            }
-            StateChangeScript {
-                name: "selectAll"
-                script: { textEdit.selectAll(); }
             }
         },
         State {
