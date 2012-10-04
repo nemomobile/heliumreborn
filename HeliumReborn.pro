@@ -89,10 +89,8 @@ OTHER_FILES += \
     qml/HeliumReborn/FieldText.qml \
     qml/HeliumReborn/common/VScrollDropShadow.qml \
     qml/HeliumReborn/common/TopDropShadow.qml \
-    qml/HeliumReborn/common/ToolTip.qml \
     qml/HeliumReborn/common/EmbossedButton.qml \
     qml/HeliumReborn/common/BottomDropShadow.qml \
-    qml/HeliumReborn/common/BarIcon.qml \
     qml/HeliumReborn/common/Background.qml \
     qml/HeliumReborn/LogbookViewComponents/TabButton.qml \
     qml/HeliumReborn/LogbookViewComponents/TabBar.qml \
