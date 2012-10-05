@@ -1,7 +1,5 @@
 <RCC>
     <qresource prefix="/qmls">
-        <file>pics/addressbar-filling-16x31.png</file>
-        <file>pics/addressbar-filling-16x31.sci</file>
         <file>pics/back-30x30.png</file>
         <file>pics/bar-bg-10x80.png</file>
         <file>pics/bookmark-icon-30x30.png</file>
@@ -11,32 +9,16 @@
         <file>pics/clear-30x30.png</file>
         <file>pics/default-favico-30x30.png</file>
         <file>pics/embossed-button-overlay-62x62.png</file>
-        <file>pics/footer-10x60.png</file>
-        <file>pics/footer-10x60.sci</file>
         <file>pics/forward-30x30.png</file>
-        <file>pics/header-10x60.png</file>
-        <file>pics/header-10x60.sci</file>
         <file>pics/history-tabicon-30x30.png</file>
         <file>pics/home-30x30.png</file>
         <file>pics/home-icon-32x32.png</file>
-        <file>pics/home2.png</file>
         <file>pics/mostvisited-tabicon-30x30.png</file>
         <file>pics/new-bookmark-30x30.png</file>
-        <file>pics/quit-30x30.png</file>
         <file>pics/reload-30x30.png</file>
         <file>pics/softshadow-bottom.png</file>
-        <file>pics/softshadow-left.png</file>
-        <file>pics/softshadow-left.sci</file>
-        <file>pics/softshadow-right.png</file>
-        <file>pics/softshadow-right.sci</file>
         <file>pics/softshadow-top.png</file>
         <file>pics/stop-30x30.png</file>
-        <file>pics/tip-center-bottom-99x50.png</file>
-        <file>pics/tip-center-left-50x99.png</file>
-        <file>pics/tip-center-right-50x99.png</file>
-        <file>pics/tip-center-top-99x50.png</file>
-        <file>pics/tooltip-bg-100x100.png</file>
-        <file>pics/tooltip-bg-trans-100x100.png</file>
         <file>pics/url-list-bg-10x60.png</file>
         <file>qml/HeliumReborn/FieldText.qml</file>
         <file>qml/HeliumReborn/FlickableWebView.qml</file>
