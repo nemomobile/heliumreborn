@@ -1,0 +1,50 @@
+* Sat Oct 13 2012 Islam Amer <islam.amer@jollamobile.com> - 1.1.4
+- Add missing runtime dependency on QtWebkit
+
+* Fri Oct 5 2012 Robin Burchell <robin+mer@viroteck.net> - 1.1.4
+- Fixes NEMO#319: Double tapping page-zoom works randomly (from Marko Gronbarj)
+- Remove unused MainView & lots of other code (from Robin)
+- Change imports to QtQuick 1.1 (from Robin)
+- Split SSL dialog out and lazy load it (from Robin)
+- Split LogbookSheet out and lazy load it (from Robin)
+- Lazy load the page menu (from Robin)
+- Remove home-grown ScrollDecorator (from Robin)
+- Clean up how the URL bar functions a bit (from Robin)
+- Remove a bunch of unused image resources (from Robin)
+
+* Tue Sep 04 2012 John Brooks <john.brooks@dereferenced.net> - 1.1.3
+- Fixes NEMO#107: Pinch zoom support added (from Marko Gronbarj)
+- Pinch-to-zoom improvements & bounceback (from Marko Gronbarj)
+
+* Wed Aug 22 2012 Marko Gronbarj <marko.gronbarj@gmail.com> - 1.1.2
+- Fixes NEMO#107: Pinch zoom support added
+
+* Sun Jul 29 2012 Denis Tikhomirov <dvtikhomirov@gmail.com> - 1.1.2
+- Fixes NEMO#215: Name in desktop file is undescriptive
+
+* Thu Feb 16 2012 Marko Saukko <marko.saukko@gmail.com> - 1.1.2
+- Add %U to the Exec line and x-maemo-urischeme/http;x-maemo-urischeme/https; to mime type
+  line to fix bugs like NEMO#114.
+- Added /usr/bin/update-desktop-database calls to post and postun
+
+* Wed Feb 15 2012 Vesa-Matti Hartikainen <vesa-matti.hartikainen@nokia.com> - 1.1.2
+- Fixes NEMO#113: Browser doesn't support giving webpage from cmdline
+- Release 1.1.2
+-- Sets window title for switcher
+ 
+* Thu Feb 09 2012 Vesa-Matti Hartikainen <vesa-matti.hartikainen@nokia.com> - 1.1.1
+- Release 1.1.1
+-- Fix graphics flickr in startup
+- Changed order of parameters in desktop-file to properly enable respawn delay
+- Added splash screens
+
+* Wed Jan 01 2012 Vesa-Matti Hartikainen <vesa-matti.hartikainen@nokia.com> - 1.1.0
+- Release 1.1.0
+- Fixes NEMO#51: Helium should support web-sites with self-signed certificate
+- Fixes NEMO#38: Helium should use booster
+- Text Field from QtComponents
+- Support for Cookies
+- Support for clearing: History, Bookmarks, Cookies
+
+* Wed Dec 21 2011 Vesa-Matti Hartikainen <vesa-matti.hartikainen@nokia.com> - 0.1.0
+- Initial version based on helium 1.0.0

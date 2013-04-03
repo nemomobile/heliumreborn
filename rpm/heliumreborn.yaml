@@ -1,0 +1,47 @@
+Name:  heliumreborn
+Summary: Helium Mobile browser ported to MeeGo Qt Quick Components
+Version: 1.1.4
+Release: 1
+Group:   System/Libraries
+License:    LGPL v2.1
+URL:        https://github.com/nemomobile/heliumreborn
+Sources:
+    - "%{name}-%{version}.tar.bz2"
+    - heliumreborn.desktop
+    - portrait.png
+    - landscape.png
+Description: Helium Mobile browser ported to Qt Quick Components for Nemo Mobile.
+Configure: none
+Builder: qmake
+Requires: 
+    - /usr/bin/update-desktop-database
+    - libqtwebkit-qmlwebkitplugin
+
+# These are the flags QtSDK sets for Harmattan
+# we want to keep both QtSDK harmattan and Nemo build as close as possible
+# so we define the same flags
+QMakeOptions:
+    - "MEEGO_VERSION_MAJOR=1"
+    - "MEEGO_VERSION_MINOR=2"
+    - "MEEGO_VERSION_PATCH=0"
+    - "MEEGO_EDITION=harmattan"
+    - "DEFINES+=MEEGO_EDITION_HARMATTAN"
+
+PkgConfigBR:
+    - QtCore >= 4.7.0
+    - QtOpenGL
+    - QtWebKit
+    - QtDeclarative
+    - QtGui
+    - qdeclarative-boostable
+ 
+# We set explicitly platform specific platform screens here since
+# the UI looks slightly different in Harmattan and thus there different
+# splashcreens are needed.
+Files:
+    - "%{_bindir}/heliumreborn"
+    - "%{_datadir}/applications/heliumreborn.desktop"
+    - "/opt/heliumreborn/landscape.png"
+    - "/opt/heliumreborn/portrait.png"
+
+

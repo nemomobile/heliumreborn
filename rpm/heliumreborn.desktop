@@ -1,0 +1,12 @@
+
+[Desktop Entry]
+Name=Browser
+Comment=HeliumReborn Mobile Browser
+Exec=invoker --splash /opt/heliumreborn/portrait.png -L /opt/heliumreborn/landscape.png -r 9 --type=d /usr/bin/heliumreborn %U
+Categories=Network;
+Icon=icons-Applications-browser
+Type=Application
+Terminal=false
+StartupNotify=true
+MimeType=text/html;x-maemo-urischeme/http;x-maemo-urischeme/https;
+X-Desktop-File-Install-Version=0.18
